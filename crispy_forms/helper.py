@@ -315,7 +315,8 @@ class FormHelper(DynamicLayoutHandler):
                 current_fields = set(getattr(form, 'fields', []))
                 meta_fields = set(getattr(form.Meta, 'fields'))
 
-                fields_to_render = current_fields & meta_fields
+                # FIXME - remove this line?
+                #fields_to_render = current_fields & meta_fields
                 left_fields_to_render = fields_to_render - form.rendered_fields
 
                 for field in left_fields_to_render:
